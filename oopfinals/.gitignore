@@ -1,0 +1,20 @@
+## Visual Studio / .NET
+.vs/
+bin/
+obj/
+packages/
+*.user
+*.suo
+*.cache
+
+## Published executables
+*.exe
+*.pdb
+*.dll
+
+## SQLite runtime data
+*.db
+*.sqlite
+
+## Rider / VS Code
+.idea/

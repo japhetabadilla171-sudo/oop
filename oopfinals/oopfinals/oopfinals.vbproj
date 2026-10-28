@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{18C61B5D-5188-412E-A728-6F530441E915}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>oopfinals.My.MyApplication</StartupObject>
+    <RootNamespace>oopfinals</RootNamespace>
+    <AssemblyName>oopfinals</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>oopfinals.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>oopfinals.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Models -->
+    <Compile Include="Models\IReportable.vb" />
+    <Compile Include="Models\Discount.vb" />
+    <Compile Include="Models\User.vb" />
+    <Compile Include="Models\Customer.vb" />
+    <Compile Include="Models\Cashier.vb" />
+    <Compile Include="Models\InventoryClerk.vb" />
+    <Compile Include="Models\StoreOwner.vb" />
+    <Compile Include="Models\Category.vb" />
+    <Compile Include="Models\Supplier.vb" />
+    <Compile Include="Models\Product.vb" />
+    <Compile Include="Models\Sale.vb" />
+    <Compile Include="Models\SaleItem.vb" />
+    <Compile Include="Models\StockMovement.vb" />
+    <!-- Data -->
+    <Compile Include="Data\DatabaseHelper.vb" />
+    <Compile Include="Data\UserRepository.vb" />
+    <Compile Include="Data\CategoryRepository.vb" />
+    <Compile Include="Data\SupplierRepository.vb" />
+    <Compile Include="Data\ProductRepository.vb" />
+    <Compile Include="Data\SaleRepository.vb" />
+    <Compile Include="Data\StockRepository.vb" />
+    <!-- Services -->
+    <Compile Include="Services\AuthService.vb" />
+    <Compile Include="Services\ValidationRules.vb" />
+    <Compile Include="Services\CartService.vb" />
+    <Compile Include="Services\ReportService.vb" />
+    <Compile Include="Services\ReceiptPrinter.vb" />
+    <Compile Include="Services\NutritionStore.vb" />
+    <!-- Shared UI theme (Figma restyle) -->
+    <Compile Include="Controls\Theme.vb" />
+    <Compile Include="Controls\IconArt.vb" />
+    <Compile Include="Controls\StyledControls.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PageHeading.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\AppHeader.vb" />
+    <Compile Include="Controls\IconTabBar.vb" />
+    <Compile Include="Controls\StyledGrid.vb" />
+    <Compile Include="Controls\NutritionTableControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\NutritionDetailView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <!-- Forms (Split into FormName.vb and FormName.Designer.vb) -->
+    <Compile Include="Forms\LoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.Designer.vb">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegisterForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegisterForm.Designer.vb">
+      <DependentUpon>RegisterForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerDashboardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerDashboardForm.Designer.vb">
+      <DependentUpon>CustomerDashboardForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CashierDashboardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CashierDashboardForm.Designer.vb">
+      <DependentUpon>CashierDashboardForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClerkDashboardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClerkDashboardForm.Designer.vb">
+      <DependentUpon>ClerkDashboardForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OwnerDashboardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OwnerDashboardForm.Designer.vb">
+      <DependentUpon>OwnerDashboardForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReceiptPreviewForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReceiptPreviewForm.Designer.vb">
+      <DependentUpon>ReceiptPreviewForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PastReceiptForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PastReceiptForm.Designer.vb">
+      <DependentUpon>PastReceiptForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <!-- My Project files -->
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegisterForm.resx">
+      <DependentUpon>RegisterForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerDashboardForm.resx">
+      <DependentUpon>CustomerDashboardForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CashierDashboardForm.resx">
+      <DependentUpon>CashierDashboardForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClerkDashboardForm.resx">
+      <DependentUpon>ClerkDashboardForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OwnerDashboardForm.resx">
+      <DependentUpon>OwnerDashboardForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReceiptPreviewForm.resx">
+      <DependentUpon>ReceiptPreviewForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PastReceiptForm.resx">
+      <DependentUpon>PastReceiptForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
